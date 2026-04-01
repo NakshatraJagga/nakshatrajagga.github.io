@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nakshatra Jagga - Resume</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a2332;
+            --accent: #2d6a8f;
+            --accent-light: #e8f1f7;
+            --accent-soft: #3d8ab5;
+            --text-dark: #1a2332;
+            --text-body: #3a4555;
+            --text-muted: #6b7a8d;
+            --border: #e2e8f0;
+            --bg-subtle: #f7f9fb;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: #e9ecef;
+            color: var(--text-body);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .page {
+            max-width: 850px;
+            margin: 30px auto;
+            background: var(--white);
+            box-shadow: 0 4px 30px rgba(0,0,0,0.08);
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        /* ======================================
+           HEADER - Clean & Professional
+           ====================================== */
+        .header {
+            display: flex;
+            align-items: stretch;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .header-sidebar {
+            width: 200px;
+            background: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 35px 20px;
+            flex-shrink: 0;
+        }
+
+        .profile-pic {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: center top;
+            border: 3px solid rgba(255,255,255,0.25);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        .header-main {
+            flex: 1;
+            padding: 32px 38px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .header-name {
+            font-family: 'Poppins', sans-serif;
+            font-size: 34px;
+            font-weight: 700;
+            color: var(--primary);
+            letter-spacing: 0.5px;
+            line-height: 1.15;
+            margin-bottom: 10px;
+        }
+
+        .header-title {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+
+        .header-title .separator {
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: var(--accent);
+            opacity: 0.5;
+            flex-shrink: 0;
+        }
+
+        .contact-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 12.5px;
+            color: var(--text-muted);
+        }
+
+        .contact-item svg {
+            width: 13px;
+            height: 13px;
+            fill: var(--accent);
+            flex-shrink: 0;
+        }
+
+        .contact-item a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .contact-item a:hover {
+            color: var(--accent);
+        }
+
+        /* ======================================
+           TWO-COLUMN BODY LAYOUT
+           ====================================== */
+        .body-wrap {
+            display: flex;
+            min-height: 600px;
+        }
+
+        /* LEFT SIDEBAR */
+        .sidebar {
+            width: 200px;
+            background: var(--primary);
+            padding: 28px 22px;
+            flex-shrink: 0;
+            color: rgba(255,255,255,0.85);
+        }
+
+        .sidebar .section {
+            margin-bottom: 28px;
+        }
+
+        .sidebar .section-title {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: rgba(255,255,255,0.5);
+            margin-bottom: 14px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid rgba(255,255,255,0.12);
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar li {
+            font-size: 12px;
+            margin-bottom: 7px;
+            line-height: 1.5;
+            color: rgba(255,255,255,0.82);
+            padding-left: 12px;
+            position: relative;
+        }
+
+        .sidebar li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 7px;
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background: var(--accent-soft);
+        }
+
+        .sidebar .sub-heading {
+            font-size: 12.5px;
+            font-weight: 600;
+            color: rgba(255,255,255,0.95);
+            margin-bottom: 8px;
+            margin-top: 14px;
+        }
+
+        .sidebar .sub-heading:first-child {
+            margin-top: 0;
+        }
+
+        /* Strength tags in sidebar */
+        .strength-tag {
+            display: block;
+            font-size: 11.5px;
+            color: rgba(255,255,255,0.8);
+            padding: 7px 10px;
+            margin-bottom: 6px;
+            background: rgba(255,255,255,0.06);
+            border-left: 2px solid var(--accent-soft);
+            border-radius: 0 4px 4px 0;
+            line-height: 1.4;
+        }
+
+        /* MAIN CONTENT */
+        .main {
+            flex: 1;
+            padding: 32px 36px;
+        }
+
+        .main .section {
+            margin-bottom: 30px;
+        }
+
+        .main .section:last-child {
+            margin-bottom: 0;
+        }
+
+        .main .section-title {
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--primary);
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--accent);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .main .section-title svg {
+            width: 16px;
+            height: 16px;
+            fill: var(--accent);
+        }
+
+        /* Profile Summary */
+        .summary-text {
+            font-size: 13.5px;
+            color: var(--text-body);
+            line-height: 1.75;
+            text-align: justify;
+        }
+
+        /* Education Items */
+        .edu-item {
+            margin-bottom: 14px;
+            padding-left: 16px;
+            border-left: 2px solid var(--accent-light);
+        }
+
+        .edu-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .edu-degree {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .edu-school {
+            font-size: 12.5px;
+            color: var(--text-muted);
+            margin-top: 2px;
+        }
+
+        .edu-year {
+            font-size: 11.5px;
+            color: var(--accent);
+            font-weight: 500;
+            margin-top: 2px;
+        }
+
+        /* Experience Items */
+        .exp-item {
+            margin-bottom: 22px;
+            position: relative;
+        }
+
+        .exp-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            margin-bottom: 4px;
+        }
+
+        .exp-role {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .exp-duration {
+            font-size: 11.5px;
+            font-weight: 500;
+            color: var(--accent);
+            white-space: nowrap;
+        }
+
+        .exp-company {
+            font-size: 12.5px;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+            font-style: italic;
+        }
+
+        .exp-item ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .exp-item li {
+            font-size: 13px;
+            color: var(--text-body);
+            margin-bottom: 5px;
+            line-height: 1.6;
+            padding-left: 16px;
+            position: relative;
+        }
+
+        .exp-item li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-size: 12px;
+        }
+
+        .exp-item li strong {
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+
+        /* Achievements */
+        .achievement-item {
+            font-size: 13px;
+            color: var(--text-body);
+            margin-bottom: 8px;
+            line-height: 1.6;
+            padding-left: 16px;
+            position: relative;
+        }
+
+        .achievement-item::before {
+            content: '★';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-size: 11px;
+            top: 1px;
+        }
+
+        .achievement-item strong {
+            color: var(--text-dark);
+        }
+
+        /* ======================================
+           PRINT STYLES
+           ====================================== */
+        @media print {
+            body {
+                background: white;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .page {
+                margin: 0;
+                box-shadow: none;
+                max-width: 100%;
+            }
+
+            .sidebar, .header-sidebar {
+                background: var(--primary) !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+
+        /* ======================================
+           RESPONSIVE
+           ====================================== */
+        @media (max-width: 768px) {
+            .page {
+                margin: 0;
+                border-radius: 0;
+            }
+
+            .header {
+                flex-direction: column;
+            }
+
+            .header-sidebar {
+                width: 100%;
+                padding: 25px;
+            }
+
+            .header-main {
+                padding: 24px;
+            }
+
+            .contact-grid {
+                flex-direction: column;
+            }
+
+            .body-wrap {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                width: 100%;
+                padding: 24px;
+            }
+
+            .main {
+                padding: 24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page">
+
+        <!-- ===================== HEADER ===================== -->
+        <div class="header">
+            <div class="header-sidebar">
+                <img src="image02.png" alt="Nakshatra Jagga" class="profile-pic">
+            </div>
+            <div class="header-main">
+                <h1 class="header-name">Nakshatra Jagga</h1>
+                <div class="header-title">
+                    <span>Digital Marketer</span>
+                    <span class="separator"></span>
+                    <span>Video Editor</span>
+                    <span class="separator"></span>
+                    <span>Graphic Designer</span>
+                </div>
+                <div class="contact-grid">
+                    <div class="contact-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M192 0C86 0 0 86 0 192c0 142.5 176 301.4 183.7 308.2a12 12 0 0 0 16.6 0C208 493.4 384 334.5 384 192 384 86 298 0 192 0zm0 272a80 80 0 1 1 0-160 80 80 0 0 1 0 160z"/></svg>
+                        Delhi, India
+                    </div>
+                    <div class="contact-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2L47.2 22.4C20 29.4 0 53.9 0 82.1 0 316.7 195.3 512 429.9 512c28.2 0 52.7-20 59.7-47.2l21-70.3c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L324.7 339c-46.2-21.5-85.3-60.6-106.8-106.8l30.3-20.4c13.7-11.1 18.4-30 11.6-46.3l-40-96z"/></svg>
+                        +91 9560707724
+                    </div>
+                    <div class="contact-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4 0-26.5-21.5-48-48-48H48zM0 176v208c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64V176L294.4 339.2a63.9 63.9 0 0 1-76.8 0L0 176z"/></svg>
+                        <a href="mailto:nakshatrajaggabusiness@gmail.com">
+                                nakshatrajaggabusiness@gmail.com
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===================== BODY ===================== -->
+        <div class="body-wrap">
+
+            <!-- ---------- LEFT SIDEBAR ---------- -->
+            <div class="sidebar">
+
+                <!-- Core Skills -->
+                <div class="section">
+                    <div class="section-title">Skills</div>
+
+                    <div class="sub-heading">Video Editing</div>
+                    <ul>
+                        <li>Adobe Premiere Pro</li>
+                        <li>Adobe After Effects</li>
+                        <li>CapCut</li>
+                    </ul>
+
+                    <div class="sub-heading">Marketing</div>
+                    <ul>
+                        <li>Social Media Strategy</li>
+                        <li>YouTube Analytics</li>
+                        <li>Lead Generation</li>
+                    </ul>
+
+                    <div class="sub-heading">AI &amp; Emerging Tech</div>
+                    <ul>
+                        <li>AI Prompt Engineering</li>
+                        <li>AI Image Generation</li>
+                        <li>AI Filmmaking</li>
+                        <li>Google Flow</li>
+                    </ul>
+
+                    <div class="sub-heading">Graphic Design</div>
+                    <ul>
+                        <li>Adobe Photoshop</li>
+                        <li>Canva</li>
+                    </ul>
+
+                    <div class="sub-heading">Other Tools</div>
+                    <ul>
+                        <li>Microsoft PowerPoint</li>
+                        <li>Canva Presentations</li>
+                    </ul>
+                </div>
+
+                <!-- Key Strengths -->
+                <div class="section">
+                    <div class="section-title">Strengths</div>
+                    <span class="strength-tag">Adaptable in dynamic environments</span>
+                    <span class="strength-tag">Strategic &amp; creative thinker</span>
+                    <span class="strength-tag">Persuasive communicator</span>
+                    <span class="strength-tag">Self-motivated &amp; confident</span>
+                    <span class="strength-tag">Strong public speaking skills</span>
+                </div>
+
+                <!-- Leadership -->
+                <div class="section">
+                    <div class="section-title">Leadership</div>
+                    <ul>
+                        <li>Led group projects with clarity and efficiency</li>
+                        <li>Effective cross-team communicator</li>
+                        <li>Mentors peers in collaborative settings</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- ---------- MAIN CONTENT ---------- -->
+            <div class="main">
+
+                <!-- Profile Summary -->
+                <div class="section">
+                    <div class="section-title">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"/></svg>
+                        Profile Summary
+                    </div>
+                    <p class="summary-text">
+                        Results-driven Digital Marketer specializing in social media marketing and lead generation,
+                        leveraging high-impact video editing tailored to platform algorithms and audience behavior
+                        to maximize reach and engagement. Skilled in creating compelling digital content with strong
+                        video editing expertise and a solid foundation in graphic design. Proficient in audience
+                        analysis and content strategy, with a proven ability to convert attention into meaningful
+                        customer action. Combines creativity with data-driven insights to optimize campaigns,
+                        influence decision-making, and deliver measurable digital impact.
+                    </p>
+                </div>
+
+                <!-- Education -->
+                <div class="section">
+                    <div class="section-title">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M320 32L0 160l320 128 320-128L320 32zM64 192v128l256 128 256-128V192L320 320 64 192z"/></svg>
+                        Education
+                    </div>
+                    <div class="edu-item">
+                        <div class="edu-degree">Bachelor of Business Administration (BBA)</div>
+                        <div class="edu-school">Dr. Akhilesh Das Gupta Institute of Technology &amp; Management</div>
+                        <div class="edu-year">2025 – 2029 · Currently in 1st Year</div>
+                    </div>
+                    <div class="edu-item">
+                        <div class="edu-degree">Senior Secondary (Class XII) – 2025</div>
+                        <div class="edu-school">Mother's Global School</div>
+                    </div>
+                </div>
+
+                <!-- Corporate Internship -->
+                <div class="section">
+                    <div class="section-title">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M184 48H328c4.4 0 8 3.6 8 8V96H176V56c0-4.4 3.6-8 8-8zm-56 8V96H64C28.7 96 0 124.7 0 160v96H192 320 512V160c0-35.3-28.7-64-64-64H384V56c0-30.9-25.1-56-56-56H184c-30.9 0-56 25.1-56 56zM512 288H320v32c0 17.7-14.3 32-32 32H224c-17.7 0-32-14.3-32-32V288H0V416c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V288z"/></svg>
+                        Corporate Internship
+                    </div>
+                    <div class="exp-item">
+                        <div class="exp-header">
+                            <span class="exp-role">Social Media &amp; Creative Intern</span>
+                            <span class="exp-duration">Nov 2025 – Present</span>
+                        </div>
+                        <div class="exp-company">Insurance Samadhan</div>
+                        <ul>
+                            <li><strong>Video Production:</strong> Shoot and edit high-quality video content for social media platforms, contributing to videos that collectively garnered millions of views.</li>
+                            <li><strong>Social Media Growth:</strong> Played a key role in scaling the brand's social media presence, driving significant follower growth and boosting audience engagement across platforms.</li>
+                            <li><strong>Graphic Design:</strong> Designed engaging social media posts and creatives aligned with brand guidelines to maintain a consistent visual identity.</li>
+                            <li><strong>Content Management:</strong> Collaborated with the marketing team to execute data-driven social media strategies, optimize content calendars, and amplify viewer engagement.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Freelance & Project Experience -->
+                <div class="section">
+                    <div class="section-title">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M352 256c0 22.2-1.2 43.6-3.3 64H163.3c-2.2-20.4-3.3-41.8-3.3-64s1.2-43.6 3.3-64H348.7c2.2 20.4 3.3 41.8 3.3 64zm28.8-64H503.9c5.3 20.5 8.1 41.9 8.1 64s-2.8 43.5-8.1 64H380.8c2.1-20.6 3.2-42 3.2-64s-1.1-43.4-3.2-64zm112.6-32H376.7c-10-63.9-29.8-117.4-55.3-151.6C399.7 29.3 462.3 92.4 493.4 160zM256 512c-34.6 0-71-48.3-90.8-128h181.6C327 463.7 290.6 512 256 512zM143.3 160C153.3 96.1 173.1 42.6 198.6 8.4 120.3 29.3 57.7 92.4 26.6 160H143.3zM8.1 192C2.8 212.5 0 233.9 0 256s2.8 43.5 8.1 64H131.2c-2.1-20.6-3.2-42-3.2-64s1.1-43.4 3.2-64H8.1zM256 0c34.6 0 71 48.3 90.8 128H165.2C185 48.3 221.4 0 256 0zM313.4 503.6C391.7 482.7 454.3 419.6 485.4 352H368.7c-10 63.9-29.8 117.4-55.3 151.6zM143.3 352H26.6C57.7 419.6 120.3 482.7 198.6 503.6C173.1 469.4 153.3 415.9 143.3 352z"/></svg>
+                        Freelance &amp; Project Experience
+                    </div>
+
+                    <div class="exp-item">
+                        <div class="exp-header">
+                            <span class="exp-role">Freelance Social Media Manager &amp; Content Creator</span>
+                            <span class="exp-duration">Jan 2026 – Present</span>
+                        </div>
+                        <div class="exp-company">Yash Ji Fabrics</div>
+                        <ul>
+                            <li><strong>End-to-End Production:</strong> Manage the full content cycle independently — conceptualizing, shooting, and editing promotional videos.</li>
+                            <li><strong>Social Media Management:</strong> Oversee social media handles to ensure consistent posting schedules and audience engagement.</li>
+                            <li><strong>Creative Direction:</strong> Showcase fabric collections through high-quality visual storytelling.</li>
+                        </ul>
+                    </div>
+
+                    <div class="exp-item">
+                        <div class="exp-header">
+                            <span class="exp-role">Social Media Manager &amp; Graphic Designer</span>
+                            <span class="exp-duration">One-Month Contract</span>
+                        </div>
+                        <div class="exp-company">Makoons Pre School</div>
+                        <ul>
+                            <li><strong>Content Strategy:</strong> Managed the preschool's official pages, driving engagement through community-focused content.</li>
+                            <li><strong>Multimedia Production:</strong> Shot and edited event videos and designed attractive graphics to highlight school activities.</li>
+                        </ul>
+                    </div>
+
+                    <div class="exp-item">
+                        <div class="exp-header">
+                            <span class="exp-role">Video Editor &amp; Media Associate</span>
+                            <span class="exp-duration">Aug – Nov 2025</span>
+                        </div>
+                        <div class="exp-company">Captain Side Esports</div>
+                        <ul>
+                            <li>Produced 20+ engaging videos over a 4-month contract, enhancing viewership and brand image.</li>
+                            <li>Applied YouTube algorithm analysis to optimize reach and improve video performance.</li>
+                            <li>Coordinated with team members to meet creative goals under tight deadlines.</li>
+                        </ul>
+                    </div>
+
+                    <div class="exp-item">
+                        <div class="exp-header">
+                            <span class="exp-role">Freelance Book Editor</span>
+                            <span class="exp-duration">July 2025</span>
+                        </div>
+                        <div class="exp-company">Independent Contractor (Project-Based)</div>
+                        <ul>
+                            <li>Edited content of more than 10 books, ensuring grammatical accuracy and narrative flow.</li>
+                            <li>Collaborated with authors to refine sentence structure while preserving each author's voice.</li>
+                        </ul>
+                    </div>
+
+                    <div class="exp-item">
+                        <div class="exp-header">
+                            <span class="exp-role">Video Editor</span>
+                            <span class="exp-duration">June 2025</span>
+                        </div>
+                        <div class="exp-company">Yash Photographers</div>
+                        <ul>
+                            <li>Edited raw footage for events — seamless transitions, colour correction, and audio synchronization.</li>
+                            <li>Delivered high-quality final cuts within strict deadlines.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Achievements -->
+                <div class="section">
+                    <div class="section-title">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M400 0H176c-26.5 0-48.1 21.8-47.1 48.2c.2 5.3 .4 10.6 .7 15.8H24C10.7 64 0 74.7 0 88c0 92.6 33.5 157 78.5 200.7c44.3 43.1 98.3 64.8 138.1 75.8c23.4 6.5 39.4 26 39.4 45.6c0 20.9-17 37.9-37.9 37.9H192c-17.7 0-32 14.3-32 32s14.3 32 32 32H384c17.7 0 32-14.3 32-32s-14.3-32-32-32h-26.1c-20.9 0-37.9-17-37.9-37.9c0-19.6 15.9-39.2 39.4-45.6c39.9-11 93.9-32.7 138.2-75.8C542.5 245 576 180.6 576 88c0-13.3-10.7-24-24-24H446.4c.3-5.2 .5-10.4 .7-15.8C448.1 21.8 426.5 0 400 0zM48.9 112h84.4c9.1 90.1 29.2 150.3 51.9 190.6c-24.9-11-67.8-36.7-97.2-65.6C52.4 202.1 48.9 141.7 48.9 112zM440.1 237c-29.4 28.9-72.4 54.6-97.2 65.6c22.7-40.3 42.8-100.5 51.9-190.6h84.4c0 29.7-3.5 90.1-39.1 125z"/></svg>
+                        Achievements
+                    </div>
+                    <div class="achievement-item">
+                        Winner of multiple <strong>Business Pitch Competitions</strong> with certificates of excellence.
+                    </div>
+                    <div class="achievement-item">
+                        Recognized for innovative startup ideas and persuasive presentation skills.
+                    </div>
+                    <div class="achievement-item">
+                        Secured top positions at inter-college and school-level entrepreneurship events.
+                    </div>
+                </div>
+
+            </div>
+            <!-- end .main -->
+
+        </div>
+        <!-- end .body-wrap -->
+
+    </div>
+    <!-- end .page -->
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+
+</html>
